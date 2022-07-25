@@ -1,4 +1,4 @@
-package com.hackthon.codestars.CheckBalanceApp;
+package com.hackthon.codestars;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
