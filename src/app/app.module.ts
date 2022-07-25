@@ -15,6 +15,7 @@ import { PipesComponent } from './Component/pipes/pipes.component';
 import { User1Component } from './Component/user1/user1.component';
 import { LoginComponent } from './Component/login/login.component';
 import { RegistrationFormComponent } from './Components/registration-form/registration-form.component';
+import { SignInComponent } from './Component/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { RegistrationFormComponent } from './Components/registration-form/regist
     User1Component,
     LoginComponent,
     RegistrationFormComponent,
-    
+    SignInComponent
 
   ],
   imports: [

@@ -48,7 +48,8 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('mobileNo', this.f.mobileNo.value);
       localStorage.setItem('panNo', this.f.panNo.value);
       localStorage.setItem('dateOfBirth', this.f.dateOfBirth.value); 
-       this.router.navigateByUrl('viewBalance');
+        // this.router.navigateByUrl('viewBalance');
+        this.router.navigateByUrl('viewBalance');
     }
 }
 

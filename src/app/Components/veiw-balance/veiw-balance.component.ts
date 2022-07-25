@@ -12,7 +12,6 @@ export class VeiwBalanceComponent implements OnInit {
   balances: any
   Balance:any;
   listOfBalances: any= [];
-  baseUrl!: 'http://localhost:8080';
   loginForm: any;
   submitted!: boolean;
   router: any;
