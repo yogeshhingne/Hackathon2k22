@@ -1,6 +1,0 @@
-export class UserDetails{
-    creditAccountBalance:number;
-    currentAccountBalance:number;
-    prepaidAccountBalance:number;
-    savingAccountBalance:number;
-}
