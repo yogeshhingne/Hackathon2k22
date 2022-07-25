@@ -15,6 +15,7 @@ import { SwitchComponent } from './Component/switch/switch.component';
 import { PipesComponent } from './Component/pipes/pipes.component';
 import { User1Component } from './Component/user1/user1.component';
 import { LoginComponent } from './Component/login/login.component';
+import { SignInComponent } from './Component/sign-in/sign-in.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { LoginComponent } from './Component/login/login.component';
     SwitchComponent,
     PipesComponent,
     User1Component,
-    LoginComponent
+    LoginComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
