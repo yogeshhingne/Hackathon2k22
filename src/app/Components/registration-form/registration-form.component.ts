@@ -19,7 +19,7 @@ ConfirmPassword!:string;
 MobileNo !:number;
 PanNo !:string;
 DateOfBirth !:string;
-  insertUser!: FormGroup;
+  insertUser: any;
   Registration: Registration = new Registration();
 
 
@@ -36,6 +36,9 @@ DateOfBirth !:string;
 
     }); 
   }
+
+  get f() { return this.insertUser.controls; }
+
   get userName() { return this.insertUser.get('userName'); }
   get password() { return this.insertUser.get('password'); }
   get confirmPassword() { return this.insertUser.get('confirmPassword'); }
@@ -83,7 +86,7 @@ DateOfBirth !:string;
        (error: any) => console.log(error));  
     this.Registration = new Registration();  
 
-    this.router.navigate(['login']);
+    this.router.navigate(['signIn']);
   }  
 
 }

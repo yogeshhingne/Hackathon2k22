@@ -17,12 +17,12 @@ export class BalanceService {
 login1(username: string, password: string) {
   console.log("p"+password+"u"+username);
 
-      return this.http.get(`http://localhost:8080/userRegistrations/`+'?userName='+username +'&password='+password,{responseType: 'text'});
+      return this.http.get(`http://localhost:8099/userRegistrations/`+'?userName='+username +'&password='+password,{responseType: 'text'});
   
 }
 
   getBalances(mobileNo:any, panNo:any, dateOfBirth:any) : Observable< any>{
-    return this.http.get(`http://localhost:8080/accontsDetails/`+mobileNo+"/"+panNo+"/"+dateOfBirth);
+    return this.http.get(`http://localhost:8099/accontsDetails/`+mobileNo+"/"+panNo+"/"+dateOfBirth);
 
   }
   

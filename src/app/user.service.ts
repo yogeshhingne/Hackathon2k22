@@ -9,9 +9,9 @@ export class UserService {
 
   constructor(private http : HttpClient) { }
   getUser(){
-    return this.http.get("http://localhost:8099/users/");
+    return this.http.get("http://localhost:8099/user/");
   }
   insertUser(registration: any) {
-    return this.http.post("http://localhost:8099/user/saveForm", registration);
+    return this.http.post("http://localhost:8099/userRegistrations/", registration);
   }
 }
