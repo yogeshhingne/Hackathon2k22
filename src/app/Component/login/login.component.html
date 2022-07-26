@@ -1,14 +1,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-
-
 <form [formGroup]="loginForm" style="width: auto; margin-top: 2cm;  height: auto; border-collapse: unset; margin-left: 23cm; " (ngSubmit)="onSubmit()">
     <h2 style="max-width: 350px; margin-left: 0.2cm;">View Balance</h2>
     <div class="form-group">
         <label for="mobileNo" style="max-width: 350px; margin-left: 0.2cm;">mobileNo</label>
         <input type="text" style="max-width: 350px; margin-left: 0.2cm;" formControlName="mobileNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }" />
         <div *ngIf="f.mobileNo.touched && f.mobileNo.invalid" class="alert alert-danger">
-            <div *ngIf="f.mobileNo.errors.required">mobileNo is required</div>
-            <div *ngIf="f.mobileNo.errors.pattern">Please, Enter valid mobile number</div>
+            <div *ngIf="f.mobileNo.errors.required">
+                <font color="red">
+                    mobile number required <br>
+                </font>
+            </div>
+            <div *ngIf="f.mobileNo.errors.pattern">
+                <font color="red">
+                    please enter the valid mobile number required <br>
+                </font>
+            </div>
         </div>
     </div>
     <br>
@@ -16,8 +22,16 @@
         <label for="panNo" style="max-width: 350px; margin-left: 0.2cm;">Pan No</label>
         <input toggle type="text" style="max-width: 350px; margin-left: 0.2cm;" formControlName="panNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.panNo.errors }">
         <div *ngIf="f.panNo.touched && f.panNo.invalid" class="alert alert-danger">
-            <div *ngIf="f.panNo.errors.required">Pan number is required</div>
-            <div *ngIf="f.panNo.errors.pattern">Please, Enter valid mobile number</div>
+            <div *ngIf="f.panNo.errors.required">
+                <font color="red">
+                    pan number required <br>
+                </font>
+            </div>
+            <div *ngIf="f.panNo.errors.pattern">
+                <font color="red">
+                    please enter the valid pan number required <br>
+                </font>
+            </div>
         </div>
     </div>
     <br>
@@ -25,7 +39,11 @@
         <label for="dateOfBirth" style="max-width: 350px; margin-left: 0.2cm;">dateOfBirth</label>
         <input toggle type="date" style="max-width: 350px; margin-left: 0.2cm;" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }">
         <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
-            <div *ngIf="f.dateOfBirth.errors.required">dateOfBirth is required</div>
+            <div *ngIf="f.dateOfBirth.errors.required">
+                <font color="red">
+                    pan number required <br>
+                </font>
+            </div>
         </div>
     </div>
     <br>

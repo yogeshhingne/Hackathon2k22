@@ -8,7 +8,7 @@ import { VeiwBalanceComponent } from './Components/veiw-balance/veiw-balance.com
 const routes: Routes = [
 
   {path:'', redirectTo: 'signIn',pathMatch: 'full'},
-  {path:'login', component : LoginComponent},
+  {path:'enterCredential', component : LoginComponent},
   {path: 'viewBalance', component: VeiwBalanceComponent},
   {path: 'register', component: RegistrationFormComponent},
   {path: 'signIn', component: SignInComponent}

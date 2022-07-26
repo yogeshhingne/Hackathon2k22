@@ -76,7 +76,7 @@ export class SignInComponent implements OnInit {
                  // console.log(this.response); 
                   localStorage.setItem('username', this.f.username.value);
                   console.log(this.f.username.value)
-                  this.router.navigateByUrl('/login')
+                  this.router.navigateByUrl('/enterCredential')
                 
                 }else{
                   

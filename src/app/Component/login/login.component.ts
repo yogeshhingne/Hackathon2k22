@@ -15,7 +15,7 @@ import { BalanceService } from 'src/app/balance.service';
 export class LoginComponent implements OnInit {
   //currentUser:any;
   listOfBalances: any= [];
-  loginForm!: any;
+  loginForm: any;
     loading = false;
     submitted = false;
     returnUrl!: string;
@@ -36,8 +36,8 @@ export class LoginComponent implements OnInit {
         localStorage.clear();
         this.loginForm = this.formBuilder.group({
           mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
-            panNo: ['',[Validators.required, Validators.pattern("^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}$")]],
-            dateOfBirth:['',Validators.required]
+          panNo: ['',[Validators.required, Validators.pattern("^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}$")]],
+          dateOfBirth:['',Validators.required]
         });
        
 
@@ -45,10 +45,12 @@ export class LoginComponent implements OnInit {
     get f() { return this.loginForm.controls; }
   
     onSubmit() {
+      if (this.loginForm.invalid) {
+             return;
+        }
       localStorage.setItem('mobileNo', this.f.mobileNo.value);
       localStorage.setItem('panNo', this.f.panNo.value);
       localStorage.setItem('dateOfBirth', this.f.dateOfBirth.value); 
-        // this.router.navigateByUrl('viewBalance');
         this.router.navigateByUrl('viewBalance');
     }
 }

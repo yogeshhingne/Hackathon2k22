@@ -25,13 +25,15 @@ export class VeiwBalanceComponent implements OnInit {
     let date_of_birth = localStorage.getItem("dateOfBirth"); 
    this.service.getBalances(mobile_no,pan_no,date_of_birth).subscribe(data=>
       {
-       this.listOfBalances.push(data);
-        console.log(this.listOfBalances);
+       if(this.listOfBalances!=null){
+        alert("This user has not registered for any account")
+       }else
+       {
+        this.listOfBalances.push(data);
+       }
+        console.log("view comp data"+this.listOfBalances);
       });
-
-  
         localStorage.clear();
-    
       }
           
     }
