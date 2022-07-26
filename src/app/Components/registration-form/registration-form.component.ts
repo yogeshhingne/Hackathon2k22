@@ -30,8 +30,8 @@ DateOfBirth !:string;
       "userName": new FormControl(null, [Validators.required ]),
      "password": new FormControl(null, [Validators.required]),
       "confirmPassword": new FormControl(null, [Validators.required]),
-      "mobileNo": new FormControl(null, [Validators.required]),
-      "panNo": new FormControl(null, [Validators.required]),
+      "mobileNo": new FormControl(null, [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]),
+      "panNo": new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}$")]),
       "dateOfBirth": new FormControl(null, [Validators.required])
 
     } ); 
