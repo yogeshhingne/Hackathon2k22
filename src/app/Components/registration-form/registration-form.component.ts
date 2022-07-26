@@ -27,14 +27,16 @@ DateOfBirth !:string;
 
   ngOnInit(): void {
     this.insertUser = new FormGroup({
-      "userName": new FormControl(null, [Validators.required ,Validators.pattern('^[A-Za-z][ a-zA-Z0-9]*(?<! )$')]),
-     "password": new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]),
-      "confirmPassword": new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]),
-      "mobileNo": new FormControl(null, [Validators.required,Validators.pattern('^[1-9]{1}$')]),
-      "panNo": new FormControl(null, [Validators.required, Validators.pattern("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")]),
-      "dateOfBirth": new FormControl(null, [Validators.required, Validators.pattern('^[1-9]{1}$')])
+      "userName": new FormControl(null, [Validators.required ]),
+     "password": new FormControl(null, [Validators.required]),
+      "confirmPassword": new FormControl(null, [Validators.required]),
+      "mobileNo": new FormControl(null, [Validators.required]),
+      "panNo": new FormControl(null, [Validators.required]),
+      "dateOfBirth": new FormControl(null, [Validators.required])
 
-    }); 
+    } ); 
+   
+
   }
 
   get f() { return this.insertUser.controls; }
@@ -81,6 +83,9 @@ DateOfBirth !:string;
 
   saveuser() { 
    
+    if (this.insertUser.invalid) {
+      return;
+    }
     this.userService.insertUser(this.Registration)  
       .subscribe((data: any) => console.log(data),
        (error: any) => console.log(error));  

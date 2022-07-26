@@ -1,119 +1,157 @@
-<div class="container">
+<div align="center">
 
-    <form [formGroup]="insertUser">
-        <label for="UserName" class="required">UserName</label>
-        <input type="text" class="form-control" id="UserName" formControlName="userName" [(ngModel)]="Registration.userName" placeholder="UserName" name="userName" />
+    <div class="container">
+        <h2 class="con-7 text-center">Register</h2>
 
-        <div *ngIf="userName.invalid && userName.touched|| submitted">
-            <span class="error" *ngIf="userName.errors?.required">UserName is required</span>
-            <span class="error" *ngIf="userName.errors?.pattern">UserName should contain character only</span>
-        </div>
+        <form [formGroup]="insertUser">
+            <label for="UserName" class="required">UserName</label>
+            <input type="text" class="form-control" id="UserName" formControlName="userName" [(ngModel)]="Registration.userName" placeholder="UserName" name="userName" />
 
-        <label for="Password" class="required">Password</label>
-        <input type="password" class="form-control" id="password" formControlName="password" [(ngModel)]="Registration.password" placeholder="Password" name="password" />
+            <!-- <div *ngIf="userName.invalid && userName.touched|| submitted">
+                <span class="error" *ngIf="userName.errors?.required">UserName is required</span>
+                <span class="error" *ngIf="userName.errors?.pattern">UserName should contain character only</span>
+            </div> -->
+            <div *ngIf="userName.invalid && (userName.dirty || userName.touched)" class="alert alert-danger">
 
-        <div *ngIf="password.invalid && password.touched|| submitted">
-            <span class="error" *ngIf="password.errors?.required">password id is required</span>
-            <span class="error" *ngIf="password.errors?.pattern">Enter valied email</span>
+                <div *ngIf="userName.errors?.['required']">
+                    <font color="red">Name is required.<br>
+                    </font>
+                </div>
+            </div>
+            <br>
+            <br>
 
-        </div>
-        <label for="ConfirmPassword" class="required">confirmPassword</label>
-        <input type="password" class="form-control" id="ConfirmPassword" formControlName="confirmPassword" [(ngModel)]="Registration.confirmPassword" placeholder="ConfirmPassword" name="confirmPassword" />
+            <label for="Password" class="required">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password" [(ngModel)]="Registration.password" placeholder="Password" name="password" />
+            <div *ngIf="password.invalid && password.touched|| submitted">
+                <span class="error" *ngIf="password.errors?.required">
+                    <font color="red">  password id is required</font></span>
 
-        <div *ngIf="confirmPassword.invalid && confirmPassword.touched|| submitted">
-            <span class="error" *ngIf="confirmPassword.errors?.required">confirmPassword is required</span>
-            <span class="error" *ngIf="confirmPassword.errors?.pattern">confirmPassword should contain character only</span>
-        </div>
-        <label for="MobileNo" class="required">mobileNo</label>
-        <input type="number" class="form-control" id="MobileNo" formControlName="mobileNo" [(ngModel)]="Registration.mobileNo" placeholder="MobileNo" name="mobileNo" />
 
-        <div *ngIf="mobileNo.invalid && mobileNo.touched|| submitted">
-            <span class="error" *ngIf="mobileNo.errors?.required">mobileNo is required</span>
-            <span class="error" *ngIf="mobileNo.errors?.pattern">Id should contain integer only</span>
-        </div>
-        <label for="DateOfBirth" class="required">dateOfBirth</label>
-        <input type="text" class="form-control" id="DateOfBirth" formControlName="dateOfBirth" [(ngModel)]="Registration.dateOfBirth" placeholder="dateOfBirth" name="dateOfBirth" />
+            </div>
+            <br>
 
-        <div *ngIf="dateOfBirth.invalid && dateOfBirth.touched|| submitted">
-            <span class="error" *ngIf="dateOfBirth.errors?.required">dateOfBirth is required</span>
-            <span class="error" *ngIf="dateOfBirth.errors?.pattern">dateOfBirth should contain character only</span>
+            <br>
+            <label for="ConfirmPassword" class="required">ConfirmPassword</label>
+            <input type="password" class="form-control" id="ConfirmPassword" formControlName="confirmPassword" [(ngModel)]="Registration.confirmPassword" placeholder="ConfirmPassword" name="confirmPassword" />
 
-        </div>
-        <label for="panNo" class="required">PanNo</label>
-        <input type="text" class="form-control" id="PanNo" formControlName="panNo" [(ngModel)]="Registration.panNo" placeholder="panNo" name="panNo" />
+            <div *ngIf="confirmPassword.invalid && confirmPassword.touched|| submitted">
+                <span class="error" *ngIf="confirmPassword.errors?.required"><font color="red">confirmPassword is required</font></span>
+            </div>
+            <div *ngIf="confirmPassword.valid && confirmPassword.value != password.value" class="text-danger">
+                <font color="red"> This password should be match </font>
+            </div>
+            <br>
 
-        <div *ngIf="panNo.invalid && panNo.touched|| submitted">
-            <span class="error" *ngIf="panNo.errors?.required">panNo is required</span>
-            <span class="error" *ngIf="panNo.errors?.pattern">panNo should contain character only</span>
+            <br>
 
-        </div>
-        <button type="button" class="bth btn-success" (click)="saveuser()" value="Submit">Submit</button>
-    </form>
+            <label for="mobileNo" class="required">MobileNo</label>
+            <input type="text" class="form-control" id="MobileNo" formControlName="mobileNo" [(ngModel)]="Registration.mobileNo" placeholder="mobileNo" name="mobileNo" />
+
+            <div *ngIf="mobileNo.invalid && mobileNo.touched|| submitted">
+                <span class="error" *ngIf="mobileNo.errors?.required"> <font color="red">mobileNo is required </font></span>
+
+            </div>
+            <br>
+
+            <br>
+            <label for="DateOfBirth" class="required">DateOfBirth</label>
+            <input type="date" class="form-control" id="DateOfBirth" formControlName="dateOfBirth" [(ngModel)]="Registration.dateOfBirth" placeholder="dateOfBirth" name="dateOfBirth" />
+
+            <div *ngIf="dateOfBirth.invalid && dateOfBirth.touched|| submitted">
+                <span class="error" *ngIf="dateOfBirth.errors?.required"> <font color="red">dateOfBirth is required</font></span>
+                <!-- <span class="error" *ngIf="dateOfBirth.errors?.pattern">dateOfBirth should contain character only</span> -->
+
+            </div>
+            <br>
+
+            <br>
+            <label for="panNo" class="required">PanNo</label>
+            <input type="text" class="form-control" id="PanNo" formControlName="panNo" [(ngModel)]="Registration.panNo" placeholder="panNo" name="panNo" />
+
+            <div *ngIf="panNo.invalid && panNo.touched|| submitted">
+                <span class="error" *ngIf="panNo.errors?.required"><font color="red">panNo is required</font></span>
+
+            </div>
+            <br>
+
+            <br>
+            <button type="button" [disabled]="confirmPassword.value != password.value" class="bth btn-success" (click)="saveuser()" value="Submit">Submit</button>
+        </form>
+    </div>
 </div>
 
 <!-- //........................ -->
 
 
-<!-- <div class="container-fluid back_img">
+
+
+
+
+<!-- <div align="center">
+
     <div class="container">
         <h2 class="con-7 text-center">Register</h2>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <form [formGroup]="insertUser">
+            <label for="username">User Name<span style="color:red"> *</span></label>
+            <input type="text" class="form-control" id="username" placeholder="User name" [(ngModel)]="Registration.username" formControlName="username" UniqueUsername>
+            <div *ngIf="username.invalid && (username.touched||submitted)">
 
-        <div class="container">
-            <form [formGroup]="insertUser">
-                <div class="container m-2 p-3  pb-5">
-                    <div [formGroup]="insertUser">
-                        <label for="UserName">UserName</label>
-                        <input type="userName" class="form-control" id="userName" formControlName="userName" aria-describedby="emailHelp" [(ngModel)]="Registration.userName" placeholder="Enter UserName" [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
-                        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                            <div *ngIf="f.username.errors.required">Username is required</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div [formGroup]="insertUser">
-                        <label for="Password">Password</label>
-                        <input type="password" class="form-control" id="password" formControlName="password" [(ngModel)]="Registration.password" placeholder="Your Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                            <div *ngIf="f.password.errors.required">Username is required</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div [formGroup]="insertUser">
-                        <label for="ConfirmPassword">ConfirmPassword:</label>
-                        <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" [(ngModel)]="Registration.confirmPassword" placeholder="confirmPassword of inquiry" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
-                        <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
-                            <div *ngIf="f.confirmPassword.errors.required">Username is required</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div [formGroup]="insertUser">
-                        <label for="MobileNo">MobileNo:</label>
-                        <input type="text" class="form-control" id="mobileNo" formControlName="mobileNo" [(ngModel)]="Registration.mobileNo" placeholder="mobileNo of inquiry" [ngClass]="{ 'is-invalid': submitted && f.mobileNo.errors }">
-                        <div *ngIf="submitted && f.mobileNo.errors" class="invalid-feedback">
-                            <div *ngIf="f.mobileNo.errors.required">Username is required</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div [formGroup]="insertUser">
-                        <label for="DateOfBirth">DateOfBirth:</label>
-                        <input type="date" class="form-control" id="dateOfBirth" formControlName="dateOfBirth" [(ngModel)]="Registration.dateOfBirth" placeholder="dateOfBirth" [ngClass]="{ 'is-invalid': submitted && f.dateOfBirth.errors }">
-                        <div *ngIf="submitted && f.dateOfBirth.errors" class="invalid-feedback">
-                            <div *ngIf="f.dateOfBirth.errors.required">Username is required</div>
-                        </div>
-                    </div>
-                    <br>
-                    <div [formGroup]="insertUser">
-                        <label for="PanNo">PanNo:</label>
-                        <input type="text" class="form-control" id="panNo" formControlName="panNo" [(ngModel)]="Registration.panNo" placeholder="PanNo" [ngClass]="{ 'is-invalid': submitted && f.panNo.errors }">
-                        <div *ngIf="submitted && f.panNo.errors" class="invalid-feedback">
-                            <div *ngIf="f.panNo.errors.required">Username is required</div>
-                        </div>
-                    </div>
-                    <br>
-                    <button type="button" class="bth btn-success" (click)=" saveuser()" value="Submit">Submit</button>
-                </div>
-            </form>
-        </div>
+                <span class="text-danger" *ngIf="username.errors?.required">User name is required</span>
+                <span class="text-danger" *ngIf="username.errors?.pattern">Please enter user name</span>
+                <span class="text-danger" *ngIf="username.errors?.UniqueUsername">userName already exists</span>
+            </div>
+            <label for="password">Password<span style="color:red"> *</span></label>   <input type="password" class="form-control" id="password" placeholder="password" [(ngModel)]="Registration.password" formControlName="password">
 
+            <div *ngIf="password.invalid && (password.touched||submitted)">
+                <span class="text-danger" *ngIf="password.errors?.required">Password required</span>
+                <span class="text-danger" *ngIf="password.errors?.pattern">Please enter password</span>
+            </div>
+
+
+            <label for="confirmPassword">Confirm Password<span style="color:red"> *</span></label>   <input type="password" class="form-control" id="confirmPassword" placeholder="confirmPassword" [(ngModel)]="Registration.confirmPassword" formControlName="confirmPassword"
+                pattern="{{ password.value }}">
+
+            <div *ngIf="confirmPassword.invalid && (confirmPassword.touched||submitted)">
+                <span class="text-danger" *ngIf="confirmPassword.errors?.required">Confirm password is required</span>
+                <span class="text-danger" *ngIf="confirmPassword.errors?.pattern">Wrong password</span>
+            </div>
+            <br>
+
+            <br>
+
+            <label for="mobileNumber">Mobile Number<span style="color:red"> *</span> </label>   <input type="number" class="form-control" id="mobileNumber" placeholder="mobileNumber" [(ngModel)]="Registration.mobileNumber" formControlName="mobileNumber">
+            <div *ngIf="mobileNumber.invalid && (mobileNumber.touched||submitted)">
+                <span class="text-danger" *ngIf="mobileNumber.errors?.required">Mobile number is required</span>
+                <span class="text-danger" *ngIf="mobileNumber.errors?.pattern">Please enter numbers only</span>
+            </div>
+            <br>
+
+            <br>
+            <label for="username">DateOfBirth<span style="color:red"> *</span></label>
+            <input type="date" class="form-control" id="dateOfBirth" placeholder="DateOfBirth" [(ngModel)]="Registration.dateOfBirth" formControlName="dateOfBirth">
+            <div *ngIf="dateOfBirth.invalid && (dateOfBirth.touched||submitted)">
+
+                <span class="text-danger" *ngIf="dateOfBirth.errors?.required">DateOfBirth is required</span>
+                <!-- <span class="text-danger" *ngIf="username.errors?.pattern">Please enter user name</span>
+            <span class="text-danger" *ngIf="username.errors?.UniqueUsername">userName already exists</span> -->
+<!-- </div>
+            <br>
+
+            <br>
+            <label for="panNo">PanNo<span style="color:red"> *</span></label>
+            <input type="text" class="form-control" id="panNo" placeholder="PanNo" [(ngModel)]="Registration.panNo" formControlName="panNo" UniqueUsername>
+            <div *ngIf="panNo.invalid && (panNo.touched||submitted)">
+
+                <span class="text-danger" *ngIf="panNo.errors?.required">PanNo is required</span>
+                <span class="text-danger" *ngIf="panNo.errors?.pattern">Please enter PanNo</span>
+                <span class="text-danger" *ngIf="panNo.errors?.UniqueUsername">PanNo already exists</span> -->
+<!-- </div>
+            <br>
+
+            <br>
+            <button type="button" class="bth btn-success" (click)="saveuser()" value="Submit">Submit</button>
+        </form>
     </div> -->
+<!-- </div>  -->
