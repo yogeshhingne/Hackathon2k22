@@ -5,9 +5,6 @@ import com.hackthon.codestars.CheckBalanceApp.repository.CreditAccountRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
-
 @Service
 public class CreditAccountServiceImpl implements CreditAccountService {
     @Autowired

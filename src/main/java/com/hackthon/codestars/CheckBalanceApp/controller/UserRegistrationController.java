@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 
 @CrossOrigin(origins="http://localhost:4200")
@@ -26,6 +28,13 @@ public class UserRegistrationController {
            String response = userRegistrationService.findByUserNameAndPass(userName,password);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+//    @GetMapping("/mpd/{userName}")
+//    public List<String> findMobilrDatePan(@PathVariable String userName){
+//        return userRegistrationService.findByUserNamepasswordusing(userName);
+//    }
+
+
+
 
 
 }

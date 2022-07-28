@@ -1,4 +1,4 @@
-package com.hackthon.codestars.CheckBalanceApp;
+package com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
