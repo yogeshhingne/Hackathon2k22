@@ -1,12 +1,9 @@
-package com.hackthon.codestars.CheckBalanceApp.controller;
+package com.hackthon.codestars.controller;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.CurrentAccount;
-import com.hackthon.codestars.CheckBalanceApp.service.CurrentAccountService;
+import com.hackthon.codestars.service.CurrentAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/CurrentAccounts")
@@ -16,6 +13,10 @@ public class CurrentAccountController {
     @PostMapping("/")
     public String insertCurrent(@RequestBody CurrentAccount currentAccount){
         return currentAccountService.saveCurrent(currentAccount);
-
     }
+    @PatchMapping("/{id}/{accNo}/{amount}/{typeOfTransaction}")
+    public String updateRecord(@PathVariable int id, @PathVariable long accNo, @PathVariable int amount, @PathVariable String typeOfTransaction){
+        return  currentAccountService.updateBalance(id, accNo, amount, typeOfTransaction);
+    }
+
 }

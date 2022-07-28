@@ -1,9 +1,10 @@
-package com.hackthon.codestars.CheckBalanceApp.service;
+package com.hackthon.codestars.service;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.AccountDetails;
 import com.hackthon.codestars.CheckBalanceApp.repository.AccountDetailsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import com.hackthon.codestars.CheckBalanceApp.service.AccountService;
 
 import java.util.List;
 import java.util.Map;

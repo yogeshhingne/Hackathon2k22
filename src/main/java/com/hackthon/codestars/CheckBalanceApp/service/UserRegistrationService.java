@@ -1,11 +1,13 @@
-package com.hackthon.codestars.CheckBalanceApp.service;
+package com.hackthon.codestars.service;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.UserRegistration;
+import com.hackthon.codestars.CheckBalanceApp.dto.request.UserDeatils;
 
 import java.util.List;
 
 public interface UserRegistrationService {
     String inserUser(UserRegistration userRegistration);
     String findByUserNameAndPass(String userName, String password);
-//    public List<String> findByUserNamepasswordusing(String username);
+
+public UserDeatils findByUserName(String userName);
 }

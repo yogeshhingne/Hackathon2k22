@@ -4,13 +4,9 @@ import lombok.*;
 
 import java.util.Date;
 
-@Setter
-@Getter
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-public class UserDeatils {
-    private long mobileNo;
-    private Date dateOfBirth;
-    private String PanNo;
+
+public interface UserDeatils {
+    long getMobileNo();
+    String getPanNo();
+    String getDateOfBirth();
 }

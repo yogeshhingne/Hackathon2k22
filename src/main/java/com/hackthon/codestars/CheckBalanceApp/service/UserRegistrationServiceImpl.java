@@ -1,7 +1,8 @@
-package com.hackthon.codestars.CheckBalanceApp.service;
+package com.hackthon.codestars.service;
 
+import com.hackthon.codestars.CheckBalanceApp.dto.request.UserDeatils;
 import com.hackthon.codestars.CheckBalanceApp.entity.UserRegistration;
-import com.hackthon.codestars.CheckBalanceApp.repository.UserRegistrationRepo;
+import com.hackthon.codestars.repository.UserRegistrationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +11,7 @@ import java.util.Base64;
 import java.util.List;
 
 @Service
-public class UserRegistrationServiceImpl implements UserRegistrationService{
+public class UserRegistrationServiceImpl implements UserRegistrationService {
 
     @Autowired
     UserRegistrationRepo userRegistrationRepo;
@@ -42,10 +43,9 @@ public class UserRegistrationServiceImpl implements UserRegistrationService{
         }
     }
 
-//    @Override
-//    public List<String> findByUserNamepasswordusing(String username) {
-//       return  userRegistrationRepo.findByUserNamepassword(username);
-//
-//    }
+    @Override
+    public UserDeatils findByUserName(String userName) {
+        return userRegistrationRepo.findByUname(userName);
+    }
 
 }

@@ -1,4 +1,4 @@
-package com.hackthon.codestars.CheckBalanceApp.repository;
+package com.hackthon.codestars.repository;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.CreditAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
