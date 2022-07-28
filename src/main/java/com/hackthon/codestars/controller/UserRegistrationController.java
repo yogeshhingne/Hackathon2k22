@@ -1,7 +1,8 @@
-package com.hackthon.codestars.CheckBalanceApp.controller;
+package com.hackthon.codestars.controller;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.UserRegistration;
-import com.hackthon.codestars.CheckBalanceApp.service.UserRegistrationService;
+import com.hackthon.codestars.CheckBalanceApp.dto.request.UserDeatils;
+import com.hackthon.codestars.service.UserRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,10 @@ public class UserRegistrationController {
            String response = userRegistrationService.findByUserNameAndPass(userName,password);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
-
+    @GetMapping("/mpd/")
+    public ResponseEntity<UserDeatils> findByUsername(@RequestParam("userName") String userName){
+        UserDeatils response = userRegistrationService.findByUserName(userName);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 
 }

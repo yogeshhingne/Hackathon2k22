@@ -1,12 +1,9 @@
-package com.hackthon.codestars.CheckBalanceApp.controller;
+package com.hackthon.codestars.controller;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.SavingAccount;
-import com.hackthon.codestars.CheckBalanceApp.service.SavingAccountService;
+import com.hackthon.codestars.service.SavingAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/SavingAccounts")
@@ -16,7 +13,10 @@ public class SavingAccountController{
     @PostMapping("/")
     public String insertSaving(@RequestBody SavingAccount savingAccount){
         return savingAccountService.saveSaving(savingAccount);
-
+    }
+    @PatchMapping("/{id}/{accNo}/{amount}/{typeOfTransaction}")
+    public String updateRecord(@PathVariable int id, @PathVariable long accNo, @PathVariable int amount, @PathVariable String typeOfTransaction){
+        return  savingAccountService.updateBalance(id, accNo, amount, typeOfTransaction);
     }
 
 }

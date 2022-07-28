@@ -1,7 +1,7 @@
-package com.hackthon.codestars.CheckBalanceApp.controller;
+package com.hackthon.codestars.controller;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.CreditAccount;
-import com.hackthon.codestars.CheckBalanceApp.service.CreditAccountService;
+import com.hackthon.codestars.service.CreditAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,6 +18,10 @@ public class CreditAccountController {
     @GetMapping("/{mobileNo}/{panNo}/{dateOfBirth}")
     public double getBalances(@PathVariable long mobileNo, @PathVariable String panNo, @PathVariable String dateOfBirth){
         return  creditAccountService.getBalance1(mobileNo,panNo,dateOfBirth);
+    }
+    @PatchMapping("/{id}/{accNo}/{amount}/{typeOfTransaction}")
+    public String updateRecord(@PathVariable int id, @PathVariable long accNo, @PathVariable int amount, @PathVariable String typeOfTransaction){
+        return  creditAccountService.updateBalance(id, accNo, amount, typeOfTransaction);
     }
 
 }

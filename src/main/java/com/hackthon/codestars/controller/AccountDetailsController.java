@@ -1,11 +1,11 @@
-package com.hackthon.codestars.CheckBalanceApp.controller;
+package com.hackthon.codestars.controller;
 
 import com.hackthon.codestars.CheckBalanceApp.entity.AccountDetails;
-import com.hackthon.codestars.CheckBalanceApp.repository.CreditAccountRepo;
 import com.hackthon.codestars.CheckBalanceApp.repository.CurrentAccountRepo;
 import com.hackthon.codestars.CheckBalanceApp.repository.PrepaidAccountRepo;
 import com.hackthon.codestars.CheckBalanceApp.repository.SavingAccountRepo;
 import com.hackthon.codestars.CheckBalanceApp.service.AccountService;
+import com.hackthon.codestars.repository.CreditAccountRepo;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
