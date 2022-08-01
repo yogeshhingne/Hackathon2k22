@@ -1,6 +1,7 @@
 package com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp.controller;
 
 import com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp.dto.request.RegistrationRequest;
+import com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp.dto.response.AccountBalances;
 import com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp.entity.UserRegistration;
 import com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp.dto.request.UserDeatils;
 import com.hackthon.codestars.CheckBalanceApp.CheckBalanceApp.repository.CreditAccountRepo;
@@ -11,7 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 
@@ -46,6 +49,10 @@ CreditAccountRepo creditAccountRepo;
     }
     @PostMapping("/joinregistration")
 public UserRegistration placeRegistration(@RequestBody RegistrationRequest request){
+        String password=request.getUserRegistration().getPassword();
+        Base64.Encoder encoder = Base64.getEncoder();
+        String epassword=encoder.encodeToString(password.getBytes());
+        request.getUserRegistration().setPassword(epassword);
        return userRegstrationRepo.save(request.getUserRegistration());
 
 }
@@ -53,4 +60,11 @@ public UserRegistration placeRegistration(@RequestBody RegistrationRequest reque
     public List<UserRegistration> getAllRegistration(){
         return userRegstrationRepo.findAll();
 }
+
+
+    @GetMapping("/{mobileNo}/{panNo}/{dateOfBirth}")
+    public ResponseEntity<Map<String,Double>> getBalances(@PathVariable long mobileNo, @PathVariable String panNo, @PathVariable String dateOfBirth){
+        Map<String,Double> response = userRegstrationRepo.findBalancesByCredential(mobileNo, panNo, dateOfBirth);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }
