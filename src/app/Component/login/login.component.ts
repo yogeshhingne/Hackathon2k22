@@ -30,10 +30,7 @@ export class LoginComponent implements OnInit {
     ) { }
     
     ngOnInit() {
-        console.log(localStorage.getItem('mobileNo'));
-        console.log(localStorage.getItem('panNo'));
-        console.log(localStorage.getItem('dateOfBirth'))
-        localStorage.clear();
+      
         this.loginForm = this.formBuilder.group({
           mobileNo: ['', [Validators.required, Validators.pattern("^((\\+91-?)|0)?[0-9]{10}$")]],
           panNo: ['',[Validators.required, Validators.pattern("^[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}$")]],
@@ -48,9 +45,9 @@ export class LoginComponent implements OnInit {
       if (this.loginForm.invalid) {
              return;
         }
-      localStorage.setItem('mobileNo', this.f.mobileNo.value);
-      localStorage.setItem('panNo', this.f.panNo.value);
-      localStorage.setItem('dateOfBirth', this.f.dateOfBirth.value); 
+        localStorage.setItem('mobileNo',this.f.mobileNo.value);
+        localStorage.setItem('panNo',this.f.panNo.value);
+        localStorage.setItem('dateOfBirth',this.f.dateOfBirth.value);
         this.router.navigateByUrl('viewBalance');
     }
 }

@@ -20,10 +20,14 @@ login1(username: string, password: string) {
       return this.http.get(`http://localhost:8099/userRegistrations/`+'?userName='+username +'&password='+password,{responseType: 'text'});
   
 }
+getUserDetails(username: string){
+  return this.http.get(`http://localhost:8099/userRegistrations/mpd/`+'?userName='+username)
 
+}
   getBalances(mobileNo:any, panNo:any, dateOfBirth:any) : Observable< any>{
-    return this.http.get(`http://localhost:8099/accontsDetails/`+mobileNo+"/"+panNo+"/"+dateOfBirth);
+    return this.http.get(`http://localhost:8099/userRegistrations/`+mobileNo+"/"+panNo+"/"+dateOfBirth);
 
   }
+  
   
 }

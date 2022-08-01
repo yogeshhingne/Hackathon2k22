@@ -36,8 +36,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     //   console.log(localStorage.getItem('username'));
-    //   localStorage.clear();
-    //   console.log(localStorage.getItem('username'));
+    //  localStorage.clear();
+      //  console.log(localStorage.getItem('username'));
       this.loginForm = this.formBuilder.group({
           username: ['', Validators.required],
           password: ['', Validators.required]
@@ -57,8 +57,7 @@ export class SignInComponent implements OnInit {
   // }
   onSubmit() {
       this.submitted = true;
-      console.log("Hi submit button works");
-
+    
       // stop here if form is invalid
     //   if (this.loginForm.invalid) {
     //       return;
@@ -75,8 +74,11 @@ export class SignInComponent implements OnInit {
                 {
                  // console.log(this.response); 
                   localStorage.setItem('username', this.f.username.value);
+                  localStorage.setItem('password', this.f.password.value);
+
                   console.log(this.f.username.value)
-                  this.router.navigateByUrl('/enterCredential')
+                 this.router.navigateByUrl('/enterCredential')
+                 // this.router.navigateByUrl('/viewBalance');
                 
                 }else{
                   

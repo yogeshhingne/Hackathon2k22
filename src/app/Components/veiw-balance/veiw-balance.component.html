@@ -13,6 +13,7 @@
         <table class="table table-bordered">
             <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Credit Balance</th>
                     <th>Current Balance</th>
                     <th>Prepaid Balance</th>
@@ -21,10 +22,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let balance of listOfBalances">
-                    <td>{{balance.creditAccountBalance}}</td>
-                    <td>{{balance.currentAccountBalance}}</td>
-                    <td>{{balance.prepaidAccountBalance}}</td>
-                    <td>{{balance.savingAccountBalance}}</td>
+                    <td>{{balance.id}}
+                        <td>{{balance.credit_bal}}</td>
+                        <td>{{balance.current_bal}}</td>
+                        <td>{{balance.prepaid_bal}}</td>
+                        <td>{{balance.saving_bal}}</td>
                 </tr>
             </tbody>
         </table>
