@@ -47,7 +47,7 @@ export class VeiwBalanceComponent implements OnInit {
                 }else{
                   alert("You have entered wrong credential")
                 }
-                    localStorage.clear();
+                    // localStorage.clear();
                
               });
       }

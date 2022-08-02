@@ -18,8 +18,6 @@ export class SignInComponent implements OnInit {
   returnUrl!: string;
   selected!:string; 
    response!:any;
-   Doctor:any;
-   Owner:any;
    type!:HTMLElement;
   constructor(
       private formBuilder: FormBuilder,
@@ -77,12 +75,13 @@ export class SignInComponent implements OnInit {
                   localStorage.setItem('password', this.f.password.value);
 
                   console.log(this.f.username.value)
+                  alert("User login Successfully");
                  this.router.navigateByUrl('/enterCredential')
                  // this.router.navigateByUrl('/viewBalance');
                 
-                }else{
+                }else {
                   
-                    alert("user not found");
+                    alert("User not exist or please enter correct username and password ");
                    
                     
                 }

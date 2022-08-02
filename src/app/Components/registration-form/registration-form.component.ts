@@ -99,6 +99,7 @@ DateOfBirth !:string;
       .subscribe((data: any) => console.log(data),
        (error: any) => console.log(error));  
     this.Registration = new Registration();  
+    alert("User registered successfully");
     this.router.navigate(['signIn']);
   }  
 }
