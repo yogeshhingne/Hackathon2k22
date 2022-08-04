@@ -13,7 +13,7 @@ import javax.persistence.*;
 //@Table(name ="prepaid_account",uniqueConstraints= @UniqueConstraint(columnNames={"accountNo", "mobileNo","panNo"}))
 public class PrepaidAccount {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int prepaidId;
     private String bankName;
     @Column(unique=true)

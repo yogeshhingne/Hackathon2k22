@@ -13,7 +13,7 @@ import javax.persistence.*;
 //@Table(name ="current_account",uniqueConstraints= @UniqueConstraint(columnNames={"accountNo", "mobileNo","panNo"}))
 public class CurrentAccount {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     private int currentId;
     private String bankName;
 //    private String accountType;
