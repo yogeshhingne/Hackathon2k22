@@ -28,6 +28,19 @@ getUserDetails(username: string){
     return this.http.get(`http://localhost:8099/userRegistrations/`+mobileNo+"/"+panNo+"/"+dateOfBirth);
 
   }
+  updateCreditBal(accNo: any, amount: any, typeOfTransaction: any): Observable<any>{
+    return this.http.patch(`http://localhost:8099/CreditAccounts/`+accNo+"/"+amount+"/"+typeOfTransaction,{responseType: 'text'});
+  }
+  updateCurrentBal(accNo: any, amount: any, typeOfTransaction: any): Observable<any>{
+    return this.http.patch(`http://localhost:8099/CurrentAccounts/`+accNo+"/"+amount+"/"+typeOfTransaction,{responseType: 'text'});
+  }
+  
+  updatePrepaidBal(accNo: any, amount: any, typeOfTransaction: any): Observable<any>{
+    return this.http.patch(`http://localhost:8099/PrepaidAccounts/`+accNo+"/"+amount+"/"+typeOfTransaction,{responseType: 'text'});
+  }
+  updateSavingBal(accNo: any, amount: any, typeOfTransaction: any): Observable<any>{
+    return this.http.patch(`http://localhost:8099/SavingAccounts/`+accNo+"/"+amount+"/"+typeOfTransaction,{responseType: 'text'});
+  }
   
   
 }

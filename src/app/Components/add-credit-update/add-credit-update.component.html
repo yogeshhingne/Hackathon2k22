@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+<form [formGroup]="updateCreditBalance" style="width: auto; margin-top: 2cm;  height: auto; border-collapse: unset; margin-left: 23cm; " (ngSubmit)="updateCredBalance()">
+    <h1>Update Credit Balance</h1>
+    <div class="form-group">
+        <label for="accNo" style="max-width: 350px; margin-left: 0.2cm;">Account Number</label>
+        <input type="text" style="max-width: 350px; margin-left: 0.2cm;" formControlName="accNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.accNo.errors }" />
+        <div *ngIf="f.accNo.touched && f.accNo.invalid" class="alert alert-danger">
+            <div *ngIf="f.accNo.errors.required">
+                <font color="red">
+                    Account number required <br>
+                </font>
+            </div>
+            <!-- <div *ngIf="f.mobileNo.errors.pattern">
+                <font color="red">
+                    please enter the valid account number <br>
+                </font>
+            </div> -->
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="amount" style="max-width: 350px; margin-left: 0.2cm;">Amount</label>
+        <input type="text" style="max-width: 350px; margin-left: 0.2cm;" formControlName="amount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.amount.errors }" />
+        <div *ngIf="f.amount.touched && f.amount.invalid" class="alert alert-danger">
+            <div *ngIf="f.amount.errors.required">
+                <font color="red">
+                    amount is required <br>
+                </font>
+            </div>
+            <!-- <div *ngIf="f.amount.errors.pattern">
+                <font color="red">
+                    please enter the valid amount <br>
+                </font>
+            </div> -->
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="typeOfTransaction" style="max-width: 350px; margin-left: 0.2cm;">typeOfTransaction</label>
+        <input toggle type="text" style="max-width: 350px; margin-left: 0.2cm;" formControlName="typeOfTransaction" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.typeOfTransaction.errors }">
+        <div *ngIf="f.typeOfTransaction.touched && f.typeOfTransaction.invalid" class="alert alert-danger">
+            <div *ngIf="f.typeOfTransaction.errors.required">
+                <font color="red">
+                    typeOfTransaction required <br>
+                </font>
+            </div>
+            <!-- <div *ngIf="f.panNo.errors.pattern">
+                <font color="red">
+                    please enter the valid typeOfTransaction <br>
+                </font>
+            </div> -->
+        </div>
+    </div>
+    <!-- <button type="button" (click)="insertPharmacy()" value="Submit">Submit</button> -->
+    <button type="button" class="bth btn-success" (click)="updateCredBalance()" value="Submit">Submit</button>
+</form>

@@ -16,6 +16,10 @@ import { User1Component } from './Component/user1/user1.component';
 import { LoginComponent } from './Component/login/login.component';
 import { RegistrationFormComponent } from './Components/registration-form/registration-form.component';
 import { SignInComponent } from './Component/sign-in/sign-in.component';
+import { AddCreditUpdateComponent } from './Components/add-credit-update/add-credit-update.component';
+import { UpdateCurrentBalanceComponent } from './Components/update-current-balance/update-current-balance.component';
+import { UpdatePrepaidBalanceComponent } from './Components/update-prepaid-balance/update-prepaid-balance.component';
+import { UpdateSavingBalanceComponent } from './Components/update-saving-balance/update-saving-balance.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { SignInComponent } from './Component/sign-in/sign-in.component';
     User1Component,
     LoginComponent,
     RegistrationFormComponent,
-    SignInComponent
+    SignInComponent,
+    AddCreditUpdateComponent,
+    UpdateCurrentBalanceComponent,
+    UpdatePrepaidBalanceComponent,
+    UpdateSavingBalanceComponent
 
   ],
   imports: [
